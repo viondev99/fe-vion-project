@@ -41,7 +41,6 @@ authInstace.interceptors.response.use(
 );
 
 export const postAuth = (url, data, params, headers) => {
-  console.log('data', data);
   return authInstace.request({
     url,
     method: "POST",

@@ -28,10 +28,10 @@ function Signin() {
     }
 
     useEffect(() => {
-        if(!!auth.user.access_token) {
+        if(!!auth.user) {
             navigate('/')
         }
-    }, [auth.user.access_token, navigate, userInfo])
+    }, [auth.user, navigate, userInfo])
 
     return (
         <>

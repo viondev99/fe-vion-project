@@ -31,7 +31,7 @@ export function Signup() {
     const data = { email: userInfo.email, password: userInfo.password }
     auth.signup(data, () => {
       navigate('/signin')
-      toast(`Đăng ký thành công, vui lòng đăng nhập`)
+      toast('Đăng ký thành công, vui lòng đăng nhập')
     })
   }
 

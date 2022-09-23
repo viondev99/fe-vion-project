@@ -6,7 +6,6 @@ export const ProductContext = React.createContext(null)
 
 export function ProductContextProvider({ children }) {
   const [listProduct, setListProduct] = useState()
-  console.log('list', listProduct)
   const [productInCart, setItemInCart] = useState(
     loadFromStorage('DataItem') || []
   )
@@ -15,10 +14,9 @@ export function ProductContextProvider({ children }) {
   )
   const [totalMoney, setTotalMoney] = useState(0)
 
-  const getListProduct = async (newItem, callback) => {
+  const getListProduct = async (callback) => {
     const response = await getAuth('http://localhost:3000/api/v1/product')
     setListProduct(response.data.data[0])
-
     if (callback) {
       callback()
     }
