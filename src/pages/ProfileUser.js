@@ -6,7 +6,7 @@ import { useAuth } from 'hooks/useAuth'
 import { useProductCtx } from 'hooks/useProduct'
 
 export function ProfileUser() {
-  let auth = useAuth()
+  const auth = useAuth()
   const productCtx = useProductCtx()
 
   const [state, _setState] = useState({
@@ -34,7 +34,7 @@ export function ProfileUser() {
     })
   }
 
-  let handleEdit = () => {
+  const handleEdit = () => {
     setState({
       isUpdate: true,
     })

@@ -17,6 +17,9 @@ module.exports = {
       },
       height: {
         'height-slide': 'calc(100vh - 228px)',
+      },
+      maxWidth: {
+        'full-hd': '1200px'
       }
     },
   },

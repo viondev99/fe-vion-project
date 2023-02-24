@@ -1,11 +1,7 @@
 import React, { useContext } from 'react'
 import { useLocation, Navigate } from 'react-router-dom'
 import { postAuth, putAuth, getAuth } from '../services'
-import {
-  clear,
-  loadFromStorage,
-  saveToStorage,
-} from '../common/utils/storage'
+import { clear, loadFromStorage, saveToStorage } from '../common/utils/storage'
 
 export const AuthContext = React.createContext(null)
 
@@ -13,10 +9,7 @@ export function AuthProvider({ children }) {
   const [user, setUser] = React.useState(loadFromStorage('User'))
   const signup = async (newUser, callback) => {
     const data = { email: newUser.email, password: newUser.password }
-    await postAuth(
-      'http://localhost:3000/api/v1/auth/signup',
-      data
-    )
+    await postAuth('http://localhost:3000/api/v1/auth/signup', data)
 
     callback()
   }
@@ -36,7 +29,7 @@ export function AuthProvider({ children }) {
   }
 
   const signout = () => {
-    setUser({ email: null, password: null, pass: null})
+    setUser({ email: null, password: null, pass: null })
     clear()
   }
 
@@ -53,7 +46,6 @@ export function AuthProvider({ children }) {
     } catch (error) {
       console.log(error)
     }
-    
   }
 
   const getUserInfor = async () => {

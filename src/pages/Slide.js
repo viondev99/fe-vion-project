@@ -1,6 +1,6 @@
-import bg_slide1 from "../assets/img/bg-slide1.jpg";
-import bg_slide2 from "../assets/img/bg-slide2.jpg";
-import bg_slide3 from "../assets/img/bg-slide3.jpg";
+import bg_slide1 from '../assets/img/bg-slide1.jpg'
+import bg_slide2 from '../assets/img/bg-slide2.jpg'
+import bg_slide3 from '../assets/img/bg-slide3.jpg'
 
 export function Slide() {
   return (
@@ -35,13 +35,25 @@ export function Slide() {
           </div>
           <div className="carousel-inner relative h-full overflow-hidden">
             <div className="carousel-item active h-full float-left w-full">
-              <img src={bg_slide1} className="block w-full h-full object-cover" alt="slide1" />
+              <img
+                src={bg_slide1}
+                className="block w-full h-full object-cover"
+                alt="slide1"
+              />
             </div>
             <div className="carousel-item h-full float-left w-full">
-              <img src={bg_slide2} className="block w-full h-full object-cover" alt="slide2" />
+              <img
+                src={bg_slide2}
+                className="block w-full h-full object-cover"
+                alt="slide2"
+              />
             </div>
             <div className="carousel-item h-full float-left w-full">
-              <img src={bg_slide3} className="block w-full h-full object-cover" alt="slide3" />
+              <img
+                src={bg_slide3}
+                className="block w-full h-full object-cover"
+                alt="slide3"
+              />
             </div>
           </div>
           <button
@@ -69,7 +81,7 @@ export function Slide() {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
-        </div>
+      </div>
     </>
-  );
+  )
 }

@@ -14,7 +14,7 @@ import FbIcon from 'assets/icon/facebook.png'
 import Logo from '../assets/img/Nemo-logo.png'
 
 export function Header() {
-  let auth = useAuth()
+  const auth = useAuth()
 
   return (
     <div className="w-full">
@@ -66,7 +66,7 @@ export function Header() {
       <div className="h-40 w-full relative pt-7 pb-7">
         <div className='absolute bg-banner-top opacity-40 bg-right-top p-0 m-0 bg-repeat-x top-0 left-0 h-full right-0 bottom-0'></div>
         <div className='flex max-w-screen-2xl h-full ml-auto mr-auto relative text-primary'>
-          <div className='absolute flex left-2'>
+          <div className='absolute flex left-0'>
             <div className='flex-none'>
               <Link to='/'><img src={Logo} alt="logo" width="80px" height="80px" className='pt-2.5 pb-2.5'/></Link>
             </div>
@@ -93,15 +93,19 @@ export function Header() {
               </div>
 
               <div className="mt-auto mb-auto">
-                {!auth?.user?.id ? (
-                  <Link to="/signin">
-                    <UserSVG className='w-10 h-10'/>
-                  </Link>
-                ) : (
-                  <Link to="/profile-user">
-                    <UserSVG className='w-10 h-10'/>
-                  </Link>
-                )}
+                {auth?.isUserLoggedIn ?
+                  (
+                    <Link to="/profile-user">
+                      <UserSVG className='w-10 h-10'/>
+                    </Link>
+                  )
+                :
+                  (
+                    <Link to="/signin">
+                      <UserSVG className='w-10 h-10'/>
+                    </Link>
+                  )
+                }
               </div>
             </div>
 

@@ -15,10 +15,10 @@ export function ProductContextProvider({ children }) {
   )
   const [totalMoney, setTotalMoney] = useState(0)
 
-  const getListProduct = async (newItem, callback) => {
+  const getListProduct = async (callback) => {
     const response = await getAuth('http://localhost:3000/api/v1/product')
     setListProduct(response.data.data[0])
-
+    console.log('response', response)
     if (callback) {
       callback()
     }
@@ -72,8 +72,8 @@ export function ProductContextProvider({ children }) {
   }
 
   const deleteItemInCart = (id) => {
-    const updatedProductInCart = productInCart.filter(item => item.id !== id)
-    
+    const updatedProductInCart = productInCart.filter((item) => item.id !== id)
+
     setItemInCart(updatedProductInCart)
     saveToStorage('DataItem', updatedProductInCart)
   }
