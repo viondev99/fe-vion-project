@@ -6,7 +6,6 @@ export const ProductContext = React.createContext(null)
 
 export function ProductContextProvider({ children }) {
   const [listProduct, setListProduct] = useState()
-  console.log('list', listProduct)
   const [productInCart, setItemInCart] = useState(
     loadFromStorage('DataItem') || []
   )

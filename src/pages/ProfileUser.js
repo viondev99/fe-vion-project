@@ -62,7 +62,7 @@ export function ProfileUser() {
           </div>
 
           <div className="text-center font-bold text-2xl">
-            <p>Bạn đang đăng nhập với {auth.user.email}</p>
+            <p>Bạn đang đăng nhập với tài khoản: <p className='font-bold text-3xl text-blue-900'>{auth.user.email}</p></p>
           </div>
 
           <div className="max-w-screen-2xl relative">

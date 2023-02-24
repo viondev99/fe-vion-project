@@ -20,7 +20,6 @@ export function AuthProvider({ children }) {
       'http://localhost:3000/api/v1/auth/login',
       data
     )
-
     setUser({ ...response.data.data, email: newUser.user.email })
 
     saveToStorage('User', { ...response.data.data, email: newUser.user.email })
